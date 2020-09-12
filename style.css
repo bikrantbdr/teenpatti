@@ -4,18 +4,20 @@
     margin:0px;
     padding:0px;
 }
-img{
-    height: 200px;
-    width:145px;
+.container img{
+    height: 50%;
+    width:35%px;
     border-radius: 7%;
     padding: 5px;;
 }
+
 
 .container{
     background-color: #5b5d5f;
     border:1px solid black;
     text-align: center;
     width: 75%;
+    height:70%;
     margin: 0 auto;
     margin-top:30px;
     padding: 10px;;
