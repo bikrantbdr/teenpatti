@@ -1,8 +1,8 @@
 *{
     color: whitesmoke;
-    box-sizing: border-box;
     margin:0px;
     padding:0px;
+    background-color: ;
 }
 .container img{
     height: 50%;
@@ -10,6 +10,7 @@
     border-radius: 7%;
     padding: 5px;;
 }
+
 
 
 .container{
@@ -66,5 +67,19 @@ h3{
     margin-left: 10px;
     width:80px;
     text-align: center;
+}
+
+.gray{
+  border: 5px solid #34383d;
+  box-shadow:0 0 10px #626263;
+}
+.red{
+  border: 5px solid #fc121b;
+  box-shadow:0 0 10px #d01115;
+}
+
+.green{
+  border: 5px solid #4dcc4d;
+  box-shadow:0 0 10px #05c405;
 }
 

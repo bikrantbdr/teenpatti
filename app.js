@@ -10,6 +10,15 @@ const result_div = document.querySelector('#result')
 const showButton = document.querySelector('#show');
 const playButton = document.querySelector('#play');
 showButton.disabled = true;
+
+const lossSound = new Audio('sounds/aww.mp3');
+const playSound = new Audio('sounds/swish.m4a');
+const showSound = new Audio('sounds/cash.mp3');
+const drawSound = new Audio('sounds/laser.wav');
+const backSound = new Audio('sounds/back.wav');
+backSound.play(-1);
+backSound.volume = 0.1;
+
 let teenpattiGame = {
     'user': { 'scoreSpan': 'user', 'div': '.userBox', 'score': 0 },
     'comp': { 'scoreSpan': 'comp', 'div': '.compBox', 'score': 0 }
@@ -66,6 +75,7 @@ function teenpattiPlay() {
     }
     showButton.disabled = false;
     playButton.disabled = true;
+    playSound.play();
 
 }
 
@@ -80,6 +90,7 @@ function teenpattiShow() {
     }
     showButton.disabled = true;
     game(playerCards, compCards);
+
 
 }
 
@@ -412,6 +423,10 @@ function win() {
 
     result_div.innerHTML = "you win";
     document.getElementById(user['scoreSpan']).innerHTML = userScore;
+    showSound.play();
+    document.getElementById("row").classList.add('green');
+    setTimeout(function () { document.getElementById("row").classList.remove('green') }, 1000)
+
 
 
 }
@@ -420,11 +435,17 @@ function loss() {
     computerScore++;
     result_div.innerHTML = "You loose";
     document.getElementById(comp['scoreSpan']).innerHTML = computerScore;
+    lossSound.play();
+    document.getElementById("row").classList.add('red');
+    setTimeout(function () { document.getElementById("row").classList.remove('red') }, 1000)
 
 
 }
 function draw() {
     result_div.innerHTML = "You Draw";
+    drawSound.play();
+    document.getElementById("row").classList.add('gray');
+    setTimeout(function () { document.getElementById("row").classList.remove('gray') }, 1000)
 
 
 
