@@ -3,6 +3,7 @@ var compCards = []
 
 let computerScore = 0;
 let userScore = 0;
+a = true;
 
 
 const result_div = document.querySelector('#result')
@@ -16,8 +17,15 @@ const playSound = new Audio('sounds/swish.m4a');
 const showSound = new Audio('sounds/cash.mp3');
 const drawSound = new Audio('sounds/laser.wav');
 const backSound = new Audio('sounds/back.wav');
-backSound.play(-1);
-backSound.volume = 0.1;
+
+function playMUsic() {
+    if (a = true) {
+        backSound.play();
+        backSound.volume = 0.1;
+        a = false
+
+    }
+}
 
 let teenpattiGame = {
     'user': { 'scoreSpan': 'user', 'div': '.userBox', 'score': 0 },
@@ -76,6 +84,7 @@ function teenpattiPlay() {
     showButton.disabled = false;
     playButton.disabled = true;
     playSound.play();
+    playMUsic();
 
 }
 
